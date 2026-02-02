@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Reminder - Settings</title>
+    <link rel="stylesheet" href="styles/settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Custom Title Bar -->
+        <div class="title-bar">
+            <div class="title-bar-drag">
+                <div class="app-logo">
+                    <span class="logo-icon">🕐</span>
+                    <span class="logo-text">Break Reminder</span>
+                </div>
+            </div>
+            <div class="title-bar-controls">
+                <button class="control-btn minimize" id="minimize-btn">
+                    <svg width="12" height="12" viewBox="0 0 12 12">
+                        <rect y="5" width="12" height="2" fill="currentColor" />
+                    </svg>
+                </button>
+                <button class="control-btn close" id="close-btn">
+                    <svg width="12" height="12" viewBox="0 0 12 12">
+                        <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Status Card -->
+            <div class="status-card">
+                <div class="status-indicator active" id="status-indicator">
+                    <div class="pulse-ring"></div>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="status-info">
+                    <h2 id="status-text">Active</h2>
+                    <p id="next-break-text">Next break in 15 minutes</p>
+                </div>
+                <button class="test-btn" id="test-btn">
+                    <span>🔔</span> Test Break
+                </button>
+            </div>
+
+            <!-- Settings Sections -->
+            <div class="settings-container">
+                <!-- Timer Settings -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <span class="section-icon">⏱️</span>
+                        <h3>Timer Settings</h3>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Reminder Interval</label>
+                            <span class="setting-description">How often to remind you</span>
+                        </div>
+                        <div class="setting-control">
+                            <div class="slider-container">
+                                <input type="range" id="reminder-interval" min="1" max="60" value="15">
+                                <div class="slider-value"><span id="interval-value">15</span> min</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Break Duration</label>
+                            <span class="setting-description">How long each break lasts</span>
+                        </div>
+                        <div class="setting-control">
+                            <div class="slider-container">
+                                <input type="range" id="break-duration" min="1" max="30" value="5">
+                                <div class="slider-value"><span id="duration-value">5</span> min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavior Settings -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <span class="section-icon">🎮</span>
+                        <h3>Behavior</h3>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Quiz to Close Early</label>
+                            <span class="setting-description">Solve a puzzle to skip break</span>
+                        </div>
+                        <div class="setting-control">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="quiz-enabled" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Sound Effects</label>
+                            <span class="setting-description">Play sound when break starts</span>
+                        </div>
+                        <div class="setting-control">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="sound-enabled" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Start with Windows</label>
+                            <span class="setting-description">Launch app on startup</span>
+                        </div>
+                        <div class="setting-control">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="auto-start">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appearance Settings -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <span class="section-icon">🎨</span>
+                        <h3>Appearance</h3>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Theme</label>
+                            <span class="setting-description">Choose your preferred look</span>
+                        </div>
+                        <div class="setting-control">
+                            <div class="theme-selector">
+                                <button class="theme-btn active" data-theme="dark">
+                                    <span>🌙</span> Dark
+                                </button>
+                                <button class="theme-btn" data-theme="light">
+                                    <span>☀️</span> Light
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="save-container">
+                <button class="save-btn" id="save-btn">
+                    <span class="save-icon">💾</span>
+                    Save Settings
+                </button>
+                <span class="save-status" id="save-status"></span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="app-footer">
+            <p>Take care of your health! 💚</p>
+            <p class="version">Version 1.0.0</p>
+        </div>
+    </div>
+
+    <script src="scripts/settings.js"></script>
+</body>
+
+</html>

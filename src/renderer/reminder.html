@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Time!</title>
+    <link rel="stylesheet" href="styles/reminder.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="overlay">
+        <!-- Animated Background -->
+        <div class="bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="reminder-container">
+            <!-- Main Break Screen -->
+            <div class="break-screen" id="break-screen">
+                <div class="break-icon">
+                    <span class="icon-main">🧘</span>
+                    <div class="icon-ring"></div>
+                </div>
+
+                <h1 class="break-title" id="break-message">Time for a Break!</h1>
+                <p class="break-subtitle">Stand up, stretch, and give your back some rest</p>
+
+                <div class="timer-container">
+                    <div class="timer-ring">
+                        <svg class="timer-svg" viewBox="0 0 200 200">
+                            <circle class="timer-bg" cx="100" cy="100" r="90" />
+                            <circle class="timer-progress" id="timer-progress" cx="100" cy="100" r="90" />
+                        </svg>
+                        <div class="timer-display">
+                            <span class="timer-value" id="timer-value">5:00</span>
+                            <span class="timer-label">remaining</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-container">
+                    <div class="tip-card" id="tip-card">
+                        <span class="tip-icon">💡</span>
+                        <p id="tip-text">Try some gentle stretches for your neck and shoulders!</p>
+                    </div>
+                </div>
+
+                <button class="skip-btn" id="skip-btn">
+                    <span>🔓</span> Need to Skip? Solve a Challenge
+                </button>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="quiz-screen hidden" id="quiz-screen">
+                <div class="quiz-header">
+                    <h2>🧩 Solve to Skip Break</h2>
+                    <p>Answer correctly to close this reminder early</p>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-type-badge" id="quiz-type">Math Challenge</div>
+                    <div class="quiz-question" id="quiz-question">
+                        What is 15 × 7 + 23?
+                    </div>
+
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options will be generated dynamically -->
+                    </div>
+
+                    <div class="quiz-input-container hidden" id="quiz-input-container">
+                        <input type="text" class="quiz-input" id="quiz-input" placeholder="Type your answer...">
+                        <button class="submit-btn" id="submit-answer">Submit</button>
+                    </div>
+
+                    <div class="quiz-feedback hidden" id="quiz-feedback">
+                        <span class="feedback-icon">❌</span>
+                        <span class="feedback-text">Wrong answer! Try again.</span>
+                    </div>
+                </div>
+
+                <button class="back-btn" id="back-btn">
+                    <span>←</span> Back to Break
+                </button>
+            </div>
+
+            <!-- Success Screen -->
+            <div class="success-screen hidden" id="success-screen">
+                <div class="success-icon">
+                    <span>🎉</span>
+                </div>
+                <h2>Great Job!</h2>
+                <p>Enjoy your break!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/reminder.js"></script>
+</body>
+
+</html>
