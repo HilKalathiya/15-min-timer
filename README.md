@@ -2,7 +2,7 @@
 
 A modern desktop application that reminds you to take breaks and rest your back. It covers your entire screen during breaks and requires solving a quiz to skip early!
 
-![Break Reminder](./screenshots/preview.png)
+![Break Reminder](./image.png)
 
 ## ✨ Features
 
